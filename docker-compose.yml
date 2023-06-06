@@ -7,20 +7,22 @@ services:
     depends_on:
       - db
       - pgadmin
+    volumes:
+      - ./yantar-shop-backend/src/main/resources/static:/yantar-shop-backend/src/main/resources/static
 
   db:
     image: postgres
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 1234
-      POSTGRES_DB: computer-master
+      POSTGRES_DB: yantar-shop
     volumes:
-      - ./data:/var/lib/postgresql/data
+      - ./data/yantar:/var/lib/postgresql/data
 
   pgadmin:
     image: dpage/pgadmin4
     environment:
-      PGADMIN_DEFAULT_EMAIL: computer-master@gmail.com
+      PGADMIN_DEFAULT_EMAIL: yantar-shop@gmail.com
       PGADMIN_DEFAULT_PASSWORD: root
     ports:
       - 5050:80

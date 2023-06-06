@@ -1,7 +1,7 @@
 FROM gradle:jdk17
 
-WORKDIR /journal-action-backend
+WORKDIR /yantar-shop-backend
 
-COPY . /journal-action-backend
+COPY . /yantar-shop-backend
 
 CMD ["gradle", "bootRun"]
